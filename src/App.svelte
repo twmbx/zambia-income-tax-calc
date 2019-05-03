@@ -63,4 +63,4 @@
 
 <h1>Zambian Salary Calculator</h1>
 <input bind:value={salary} placeholder="10000">
-<p>{@html message || 'No Taxes ='}</p>
+<p>{@html message || 'No Taxes'}</p>
