@@ -4,9 +4,6 @@
 	
 	$: message = calcTax(salary);
 
-	function handleClick() {
-		count += 1;
-	}
 	function getTaxable(salary) {
 		return salary - 3300
 	}
