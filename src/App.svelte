@@ -19,6 +19,7 @@
 	}
 
 	function isTaxable(salary) {
+
 		if (salary > arrSum(bands)) {
 			return true
 		}
@@ -26,9 +27,6 @@
 	}
 	
 	function calcTaxes(tsal) {
-		// var bands = [800, 2100]
-		// var tax = [0.25, 0.3, 0.37]
-		// var dues = []
 
 		if (tsal <= bands[0]) {
 			dues[0] = tsal * tax[0]
@@ -52,6 +50,7 @@
 	}
 	
 	function calcTax(salary){
+		
 		if (isTaxable(salary)) {
 			tsal = getTaxable(salary)
 			totalDues = calcTaxes(tsal)
