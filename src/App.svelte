@@ -1,24 +1,34 @@
 <script>
 	let salary = 10000;
 	let response = '';
+	let tsal;
+	let bands = [800, 2100];
+	let tax = [0.25, 0.3, 0.37];
+	let dues =[];
+	let totalDues;
 	
 	$: message = calcTax(salary);
+	$: dues;
+	$: tsal;
+	$: totalDues;
+
+	const arrSum = arr => arr.reduce((a,b) => a + b, 0);
 
 	function getTaxable(salary) {
-		return salary - 3300
+		return salary - arrSum(bands)
 	}
 
 	function isTaxable(salary) {
-		if (salary > 3300) {
+		if (salary > arrSum(bands)) {
 			return true
 		}
 		return false
 	}
 	
 	function calcTaxes(tsal) {
-		var bands = [800, 2100]
-		var tax = [0.25, 0.3, 0.37]
-		var dues = []
+		// var bands = [800, 2100]
+		// var tax = [0.25, 0.3, 0.37]
+		// var dues = []
 
 		if (tsal <= bands[0]) {
 			dues[0] = tsal * tax[0]
@@ -43,13 +53,13 @@
 	
 	function calcTax(salary){
 		if (isTaxable(salary)) {
-			var tsal = getTaxable(salary)
-			var dues = calcTaxes(tsal)
+			tsal = getTaxable(salary)
+			totalDues = calcTaxes(tsal)
 			
 			response = "<p>The salary is taxable.</p>"
-				+ "<p>The taxable salary is: " + tsal + "</p>"
-				+ "<p>Due for the taxman: " + dues + "</p>"
-				+ "<p>Salary after tax: "+ (salary-dues) + "</p>"
+				+ "<p>The taxable salary is: ZMW " + tsal + "</p>"
+				+ "<p>Due for the taxman: ZMW " + totalDues + "</p>"
+				+ "<p>Salary after tax: ZMW "+ (salary-totalDues) + "</p>"
 			
 			return response
 		} else {
@@ -58,6 +68,8 @@
 	}
 </script>
 
-<h1>Zambian Salary Calculator</h1>
-<input bind:value={salary} placeholder="10000">
+<h1>🇿🇲 Salary Calculator</h1>
+<span class="input-symbol-zmw">
+	<input bind:value={salary} placeholder="10000">
+</span>
 <p>{@html message || 'No Taxes'}</p>
