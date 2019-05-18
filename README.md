@@ -13,3 +13,9 @@ Checkout repo, run `yarn run dev`. (or use npm...)
 ### Screenshot
 
 ![Example Salary](Screenshot.png)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+Made with :heart: in :zambia:
