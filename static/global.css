@@ -12,11 +12,13 @@ body {
 	box-sizing: border-box;
 	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 }
-
+label {
+	font-size: 1.5em;
+}
 input {
 	font-family: inherit;
 	font-size: 2.5em;
-	width:75%;
+	width:100%;
 	padding: 0.4em;
 	margin: 0 0 0.5em 0;
 	box-sizing: border-box;
@@ -32,10 +34,14 @@ input {
 }
 .input-symbol-zmw:before {
 	position: absolute;
-	top: -.55em;
+	top: .95em;
 	content:"ZMW";
-	left: 15px;
+	left: -1.4em;
 	font-family: inherit;
 	font-size: 2.5em;
 	color: rgb(92, 92, 92);
+}
+
+a {
+	color: inherit;
 }

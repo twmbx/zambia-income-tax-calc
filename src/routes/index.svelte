@@ -15,12 +15,12 @@
 	const arrSum = arr => arr.reduce((a,b) => a + b, 0);
 
 	function getTaxable(salary) {
-		return salary - arrSum(bands)
+		return salary - 3300
 	}
 
 	function isTaxable(salary) {
 
-		if (salary > arrSum(bands)) {
+		if (salary > 3300) {
 			return true
 		}
 		return false
@@ -56,6 +56,7 @@
 			totalDues = calcTaxes(tsal)
 			
 			response = "<p>The salary is taxable.</p>"
+				+ "<p>Amount exempt from tax: ZMW 3300</p>"
 				+ "<p>The taxable salary is: ZMW " + tsal + "</p>"
 				+ "<p>Due for the taxman: ZMW " + totalDues + "</p>"
 				+ "<p>Salary after tax: ZMW "+ (salary-totalDues) + "</p>"
@@ -67,8 +68,14 @@
 	}
 </script>
 
-<h1>🇿🇲 Salary Calculator</h1>
+<svelte:head>
+	<title>Zambian Income Tax Calculator</title>
+</svelte:head>
+
+<h1>🇿🇲 Income Tax Calculator</h1>
+<label for="salary">Salary:</label>
 <span class="input-symbol-zmw">
-	<input bind:value={salary} placeholder="10000">
+	<input name="salary" id="salary" bind:value={salary} placeholder="10000">
 </span>
 <p>{@html message || 'No Taxes'}</p>
+
