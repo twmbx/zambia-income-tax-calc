@@ -5,6 +5,7 @@
 	let bands = [800, 2100];
 	let tax = [0.25, 0.3, 0.37];
 	let dues =[];
+	let napsa;
 	let totalDues;
 	
 	$: message = calcTax(salary);
@@ -48,8 +49,14 @@
 
 		return dues[0] + dues[1] + dues[2]
 	}
+
+	function calcNapsaContrib(salary){
+		return salary * 0.05
+	}
 	
 	function calcTax(salary){
+		
+		napsa = calcNapsaContrib(salary)
 		
 		if (isTaxable(salary)) {
 			tsal = getTaxable(salary)
@@ -59,11 +66,16 @@
 				+ "<p>Amount exempt from tax: ZMW 3300</p>"
 				+ "<p>The taxable salary is: ZMW " + tsal + "</p>"
 				+ "<p>Due for the taxman: ZMW " + totalDues + "</p>"
-				+ "<p>Salary after tax: ZMW "+ (salary-totalDues) + "</p>"
+				+ "<p>Napsa Contribution: ZMW " + napsa + "</p>"
+				+ "<p>Salary after tax: ZMW "+ (salary-totalDues-napsa) + "</p>"
 			
 			return response
 		} else {
-			return "The salary is not taxable."
+			response = "<p>The salary is not taxable. However, </p>"
+				+ "<p>Amount due to Napsa: ZMW "+ napsa +"</p>"
+				+ "<p>Total Salary after Napsa Deduction: ZMW "+ (salary - napsa) +"</p>"
+
+			return response
 		}
 	}
 </script>
