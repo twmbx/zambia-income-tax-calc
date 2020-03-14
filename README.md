@@ -13,6 +13,9 @@ Checkout repo, run `yarn run dev`. (or use npm...)
 
 [income-tax.twmbx.now.sh](https://income-tax.twmbx.now.sh/)
 
+### Thanks for contributing
+  - [Mukuma Musenge](https://github.com/k9uma) - [Added NAPSA Deduction](https://github.com/twmbx/zambia-income-tax-calc/pull/1)
+
 ### Screenshot
 
 ![Example Salary](Screenshot.png)
