@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "sapper dev",
     "now": "sapper build --legacy && now",
-    "build": "sapper build --legacy",
+    "build": "sapper export",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",
     "cy:run": "cypress run",
@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "compression": "^1.7.1",
-    "polka": "^0.5.0",
+    "polka": "next",
     "rollup-plugin-json": "^4.0.0",
     "sirv": "^0.4.0"
   },
