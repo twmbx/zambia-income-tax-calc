@@ -1,5 +1,2 @@
-__sapper__/dev
-__sapper__/export
-cypress
-node_modules
-src
+README.md
+yarn.lock

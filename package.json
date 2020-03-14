@@ -5,7 +5,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "sapper dev",
-    "now": "sapper build --legacy && now",
     "build": "sapper export",
     "export": "sapper export --legacy",
     "start": "node __sapper__/build",

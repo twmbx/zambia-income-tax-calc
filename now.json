@@ -4,9 +4,8 @@
   "version": 2,
   "builds": [
     {
-      "src": "__sapper__/build/index.js",
+      "src": "package.json",
       "use": "now-sapper"
     }
-  ],
-  "routes": [{ "src": "/(.*)", "dest": "__sapper__/build/index.js" }]
+  ]
 }
