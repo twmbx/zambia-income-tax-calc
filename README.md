@@ -22,10 +22,10 @@ Checkout repo, run `yarn run dev`. (or use npm...)
 
 ### Deduction sources
 *all links retrieved - 17/04/2020
-[Zambia Revenue Authority](https://www.zra.org.zm/tax-information/#paye)
-[National Pension Scheme Authority](https://www.napsa.co.zm/important-facts-about-the-contribution-process/)
-[Pension Cieling](https://dobusinessafrica.com/2020/01/08/2020-napsa-zambia-contribution-ceiling-revision/)
-[The National Health Insurance Management Authority](https://nhima.co.zm/membership/registration-steps)
+[Zambia Revenue Authority](https://www.zra.org.zm/tax-information/#paye)<br>
+[National Pension Scheme Authority](https://www.napsa.co.zm/important-facts-about-the-contribution-process/)<br>
+[Pension Cieling](https://dobusinessafrica.com/2020/01/08/2020-napsa-zambia-contribution-ceiling-revision/)<br>
+[The National Health Insurance Management Authority](https://nhima.co.zm/membership/registration-steps)<br>
 
 ## License
 
