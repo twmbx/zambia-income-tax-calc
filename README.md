@@ -20,6 +20,13 @@ Checkout repo, run `yarn run dev`. (or use npm...)
 
 ![Example Salary](Screenshot.png)
 
+### Deduction sources
+*all links retrieved - 17/04/2020
+[Zambia Revenue Authority](https://www.zra.org.zm/tax-information/#paye)
+[National Pension Scheme Authority](https://www.napsa.co.zm/important-facts-about-the-contribution-process/)
+[Pension Cieling](https://dobusinessafrica.com/2020/01/08/2020-napsa-zambia-contribution-ceiling-revision/)
+[The National Health Insurance Management Authority](https://nhima.co.zm/membership/registration-steps)
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
