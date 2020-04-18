@@ -51,9 +51,9 @@
 	}
 
 	function calcNapsaContrib(salary){
-		return salary * 0.05
-	}
-	
+		var contrib = salary * 0.05
+		return ( (contrib > 1149.60) ? 1149.60 : contrib )
+    }
 	function calcTax(salary){
 		
 		napsa = calcNapsaContrib(salary)
@@ -66,13 +66,13 @@
 				+ "<p>Amount exempt from tax: ZMW 3300</p>"
 				+ "<p>The taxable salary is: ZMW " + tsal + "</p>"
 				+ "<p>Due for the taxman: ZMW " + totalDues + "</p>"
-				+ "<p>Napsa Contribution: ZMW " + napsa + "</p>"
+				+ "<p>NAPSA Contribution: ZMW " + napsa + "</p>"
 				+ "<p>Salary after tax: ZMW "+ (salary-totalDues-napsa) + "</p>"
 			
 			return response
 		} else {
 			response = "<p>The salary is not taxable. However, </p>"
-				+ "<p>Amount due to Napsa: ZMW "+ napsa +"</p>"
+				+ "<p>Amount due to NAPSA: ZMW "+ napsa +"</p>"
 				+ "<p>Total Salary after Napsa Deduction: ZMW "+ (salary - napsa) +"</p>"
 
 			return response
