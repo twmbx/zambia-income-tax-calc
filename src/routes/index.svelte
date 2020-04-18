@@ -5,9 +5,10 @@
 	let bands = [800, 2100];
 	let tax = [0.25, 0.3, 0.37];
 	let dues =[];
-	let napsa;
+    let napsa;
+    let nhima;
 	let totalDues;
-	
+
 	$: message = calcTax(salary);
 	$: dues;
 	$: tsal;
@@ -26,7 +27,7 @@
 		}
 		return false
 	}
-	
+
 	function calcTaxes(tsal) {
 
 		if (tsal <= bands[0]) {
@@ -54,26 +55,34 @@
 		var contrib = salary * 0.05
 		return ( (contrib > 1149.60) ? 1149.60 : contrib )
     }
+
+    function calcHeathInsuranceContrib(salary){{
+        return salary * 0.01
+    }}
+
 	function calcTax(salary){
-		
-		napsa = calcNapsaContrib(salary)
-		
+
+        napsa = calcNapsaContrib(salary)
+        nhima = calcHeathInsuranceContrib(salary)
+
 		if (isTaxable(salary)) {
 			tsal = getTaxable(salary)
 			totalDues = calcTaxes(tsal)
-			
+
 			response = "<p>The salary is taxable.</p>"
 				+ "<p>Amount exempt from tax: ZMW 3300</p>"
 				+ "<p>The taxable salary is: ZMW " + tsal + "</p>"
 				+ "<p>Due for the taxman: ZMW " + totalDues + "</p>"
 				+ "<p>NAPSA Contribution: ZMW " + napsa + "</p>"
-				+ "<p>Salary after tax: ZMW "+ (salary-totalDues-napsa) + "</p>"
-			
+				+ "<p>NHIMA Contribution: ZMW " + nhima + "</p>"
+				+ "<p>Salary after deductions: ZMW "+ (salary - totalDues - napsa - nhima) + "</p>"
+
 			return response
 		} else {
 			response = "<p>The salary is not taxable. However, </p>"
 				+ "<p>Amount due to NAPSA: ZMW "+ napsa +"</p>"
-				+ "<p>Total Salary after Napsa Deduction: ZMW "+ (salary - napsa) +"</p>"
+				+ "<p>Amount due to NHIMA: ZMW "+ nhima +"</p>"
+				+ "<p>Total Salary after deductions: ZMW "+ (salary - napsa - nhima) +"</p>"
 
 			return response
 		}
