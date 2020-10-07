@@ -2,7 +2,7 @@
 
 Goal: achieve a reactive Tax calculator for Zambian salaries as a way of experimenting with Sapper/Svelte.
 
-**Bonus**: This app runs as a Progressive Web App
+**Bonus**: This app runs as a Progressive Web App with offline support.
 ### Want to try it out?
 
 Checkout repo, run `yarn run dev`. (or use npm...)
